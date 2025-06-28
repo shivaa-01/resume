@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About _shivaa.01</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+body {
+  margin: 0;
+  background: black;
+  font-family: 'Orbitron', monospace;
+  color: #00ffcc;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 950px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.card {
+  background: linear-gradient(145deg, #000000, #0a0a0a);
+  border: 2px solid #00ff99;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 255, 153, 0.4);
+}
+.card h1 {
+  margin-top: 0;
+  color: #00f5e1;
+}
+.card h2, .card h3 {
+  color: #FF00FF;
+}
+.highlight {
+  color: #FF3C3C;
+  font-weight: bold;
+}
+.subtext {
+  color: white;
+}
+ul {
+  padding-left: 20px;
+}
+ul li {
+  margin-bottom: 0.5rem;
+  color: white;
+}
+#content {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+.cursor {
+  color: #FF3C3C;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%,100% { opacity: 0; }
+}
+.social-btn {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 10px 20px;
+  border: 2px solid #00ff99;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #00ff99;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.social-btn:hover {
+  background: #00ff99;
+  color: #000;
+}
+</style>
+
+<style>
+p, li, span, h3, h4, h5, h6 {
+    color: #ffffff;
+    text-shadow: none;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 0.5px;
+}
+</style>
+</head>
+<body class="matrix">
+  <canvas id="matrixCanvas"></canvas>
+  <div class="container">
+    <div class="card">
+      <h1 style="
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.5em;
+  color: #00ffff;
+  font-weight: normal;
+  text-shadow: none;
+  background: none;
+">
+  ABOUT ME
+</h1>
+
+
+      <div id="content" style="font-family: Arial, sans-serif;"></div>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>Web Exploitation</li>
+        <li>Recon & Enumeration</li>
+        <li>CTFs (TryHackMe, Hack The Box)</li>
+        <li>Languages :- Python, SQL, HTML, C++</li>
+        <li>Networking</li>
+        <li>Pentesting</li>
+        <li>Linux</li>
+        <li>OSINT & Reporting</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Projects</h2>
+      <p>🚧 Uploading Soon...</p>
+    </div>
+
+    <div class="card">
+      <h2>Connect with Me</h2>
+      <a class="social-btn" href="https://x.com/_Shivaa01" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="20" style="vertical-align:middle; margin-right:8px;">Twitter</a>
+      <a class="social-btn" href="" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" width="20" style="vertical-align:middle; margin-right:8px;">Telegram</a>
+      <a class="social-btn" href="" target="_blank"><img src="images/snapchat_icon.png" alt="Snapchat" width="20" style="vertical-align:middle; margin-right:8px;">Snapchat</a>
+      <a class="social-btn" href="" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="20" style="vertical-align:middle; margin-right:8px;">Instagram</a>
+    </div>
+  </div>
+
+<script>
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+let letters = "01".split("");
+let fontSize = 10;
+let columns = canvas.width / fontSize;
+let drops = Array(Math.floor(columns)).fill(1);
+function draw() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.01)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#006600";
+  ctx.font = fontSize + "px monospace";
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  }
+}
+setInterval(draw, 33);
+
+let content = ` HACKER | STUDENT
+
+Hey there, I’m rohit kushwaha — 20 years old, self-taught, and obsessed with cybersecurity.
+I’ve been in the field for nearly a year now, dedicating countless hours to learning,
+experimenting, and growing through hands-on platforms like TryHackMe, Hack The Box, and real-world simulations.
+
+Whether it’s network reconnaissance, web exploitation, privilege escalation, or CTF-style challenges,
+I’m constantly in learning mode — because this field doesn’t wait for anyone.
+
+🧠 I Have Deeply knowledge in PENETRATION TESTING , WEB APPLICATION PENETRATION TESTING , ANDROID HACKING and more
+
+🔍 I believe in thinking like an attacker to build stronger defenses.
+I’m actively practicing offensive security techniques in safe, legal environments and applying them to understand how real-world attacks work.
+
+
+📈 In the process, I’ve earned a place in the Top 5% on TryHackMe,
+Completed mostly portswigger labs , making malware and using Advance rats — not for recognition, but to push my limits.
+
+🔐 My mission is simple:
+→ Learn deeply. Practice relentlessly. Hack ethically. Help the community.
+
+Welcome to the grind. We’re just getting started.`;
+
+let i = 0;
+function typeContent() {
+  if (i < content.length) {
+    document.getElementById("content").innerHTML += `<span style='color: white;'>${content.charAt(i)}</span>`;
+    i++;
+    setTimeout(typeContent, 18);
+  } else {
+    document.getElementById("content").innerHTML += "<span class='cursor'>|</span>";
+  }
+}
+typeContent();
+</script>
+
+  <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+
+</html>
